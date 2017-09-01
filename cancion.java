@@ -5,7 +5,6 @@ public class cancion
     public cancion(int claveIni, String nombreIni)
     {
         nombre = nombreIni;
-        clave = claveIni;
     }
     
     public String dimeDetalles()

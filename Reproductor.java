@@ -1,7 +1,7 @@
 
-public class reproductor
+public class Reproductor
 {
-    public reproductor()
+    public Reproductor()
     {
     }
     
@@ -10,5 +10,6 @@ public class reproductor
         //simulador
         System.out.println( "Reproduciendo: " + nombreArchivo);
     }
+    
     
 }
