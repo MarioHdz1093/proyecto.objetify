@@ -1,15 +1,17 @@
 import java.util.ArrayList;
-
+import java.util.Random;
 
 public class biblioteca
 {
     private ArrayList<String> canciones;  
     public Reproductor reproductor;
-    
+    private Random aleatorios;
+        
     public biblioteca()
     {
         canciones = new ArrayList<String>();
         reproductor = new Reproductor();
+        Random aleatorios = new Random();
     }
     
     public void agregarCancion(String nombreArchivo)
@@ -24,7 +26,7 @@ public class biblioteca
     
    public int totalArchivos(int totalCanciones)
    {        
-        for(int i=0; i < canciones.length; i++)
+        for(int i=0; i < canciones.size(); i++)
         {
             totalCanciones = totalCanciones + 1;
         }
@@ -33,21 +35,47 @@ public class biblioteca
    
    public void reproduceTodo()
    {
-       for(int i=0; i < canciones.length; i++)
+       for(int i=0; i < canciones.size(); i++)
        {
            reproductor.reproducir(canciones.get(i) );
        }
    }
    
-   public void borraUna(String nombre)
-    {
-        for(int i=0; i < canciones.length; i++)
+   public int busca(String nombre)
+   {
+       for(int i=0; i < canciones.size(); i++)
         {
-            if(nombre == canciones.size())
+            if(nombre == canciones.get(i))
             {
-                canciones = null;
+                return i;
+            }
+        }
+        return -1;
+   }
+   
+      public void borraUna(String nombre)
+    {
+        for(int i=0; i < canciones.size(); i++)
+        {
+            if(nombre == canciones.get(i))
+            {
+                canciones.remove(i);
             }
         }
     }
+    
+       public void borraTodo(String nombre)
+    {
+        for(int i=0; i < canciones.size(); i++)
+        {
+            canciones.remove(i);
+        }
+    }
+    
+    /*public void reproducirRandom()
+    {
+        int aleatorio = aleatorios.next(canciones.totalArchivos());
+        reproductor.reproducir(canciones.get(aleatorio));
+    }*/
 }
 
