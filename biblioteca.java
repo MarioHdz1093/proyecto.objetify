@@ -5,7 +5,7 @@ public class biblioteca
 {
     private ArrayList<String> canciones;  
     public Reproductor reproductor;
-    private Random aleatorios;
+    public Random aleatorios;
         
     public biblioteca()
     {
@@ -72,10 +72,10 @@ public class biblioteca
         }
     }
     
-    /*public void reproducirRandom()
+    public void reproducirRandom()
     {
-        int aleatorio = aleatorios.next(canciones.totalArchivos());
+        int aleatorio = aleatorios.nextInt(canciones.size());
         reproductor.reproducir(canciones.get(aleatorio));
-    }*/
+    }
 }
 
